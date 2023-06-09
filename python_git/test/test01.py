@@ -1,5 +1,5 @@
-from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
 
 X = [[0, 'a'], [0, 'b'], [1, 'a'], [2, 'b']]
 

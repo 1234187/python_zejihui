@@ -1,7 +1,7 @@
-import pandas as pd
-import warnings
-import re
 import os
+import warnings
+
+import pandas as pd
 from Sql.qfsql import qfsql
 
 qf=qfsql()

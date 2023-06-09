@@ -1,10 +1,10 @@
 # 导包
-import pandas as pd
-import re
 import warnings
 import time
 import os
 from Sql.qfsql import qfsql
+# from Sql_2.qfsql import qfsql
+import pandas as pd
 warnings.filterwarnings('ignore')
 qf=qfsql()
 

@@ -1,5 +1,4 @@
 import hashlib
-import urllib
 from urllib.parse import urlencode, quote
 
 def queryToArray(query):

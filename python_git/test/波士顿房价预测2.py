@@ -1,13 +1,13 @@
 # 导入需要的库
-import pandas as pd
-import numpy as np
 import warnings
-import matplotlib.pyplot as plt
+
+import numpy as np
+import pandas as pd
 from sklearn.datasets import load_boston
-from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
-from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
 from sklearn.metrics import r2_score, mean_squared_error
+from sklearn.model_selection import train_test_split, GridSearchCV
 
 # 忽略警告
 warnings.filterwarnings('ignore')

@@ -1,6 +1,6 @@
-import pandas as pd
-import warnings
 import hashlib
+
+import pandas as pd
 
 df1=pd.read_excel('./原始数据.xlsx')
 list1=['租赁人名字','租赁人手机号','租赁人身份证']
