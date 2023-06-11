@@ -3,7 +3,6 @@ import warnings
 import time
 import os
 from Sql.qfsql import qfsql
-# from Sql_2.qfsql import qfsql
 import pandas as pd
 warnings.filterwarnings('ignore')
 qf=qfsql()
@@ -169,7 +168,7 @@ class DataClean(object):
         dic1['逾期率_成交']=round((dic1['逾期订单数']/dic1['成交订单数'])*100,2)
         dic1['逾期率_出账']=round((dic1['逾期订单数']/dic1['出账订单数'])*100,2)
         data_1=pd.DataFrame(dic1,index=['0']).T
-        print('商户数据整体情况获取完成')
+        # print('商户数据整体情况获取完成')
         return data_1
 
     # 用户属性分布情况
@@ -180,14 +179,14 @@ class DataClean(object):
         data_age=self.data_group(data1,['年龄区间'])
         data_sex_risk=self.data_group(data1,['性别','风险等级'])
         data_age_risk=self.data_group(data1,['年龄区间','风险等级'])
-        print('用户属性分布情况获取完成')
+        # print('用户属性分布情况获取完成')
         return data_sex,data_age,data_sex_risk,data_age_risk
 
     # 风险等级分布
     def get_risk_data(self):
         data1=self.data[self.data['商户名称']==self.merchant_name].copy()
         data_risk=self.data_group(data1,['风险等级'])
-        print('风险等级分布获取完成')
+        # print('风险等级分布获取完成')
         return data_risk
 
     # 月租金额区间分布
@@ -195,7 +194,7 @@ class DataClean(object):
         data1=self.data[self.data['商户名称']==self.merchant_name].copy()
         data_rent=self.data_group(data1,['月租金额区间'])
         data_rent_risk=self.data_group(data1,['月租金额区间','风险等级'])
-        print('月租金额区间分布获取完成')
+        # print('月租金额区间分布获取完成')
         return data_rent,data_rent_risk
 
     # 设备价格区间分布
@@ -203,7 +202,7 @@ class DataClean(object):
         data1=self.data[self.data['商户名称']==self.merchant_name].copy()
         data_device=self.data_group(data1,['设备价格区间'])
         data_device_risk=self.data_group(data1,['设备价格区间','风险等级'])
-        print('设备价格区间分布获取完成')
+        # print('设备价格区间分布获取完成')
         return data_device,data_device_risk
 
     # 逾期订单省份分布
@@ -211,7 +210,7 @@ class DataClean(object):
         data1=self.data[self.data['商户名称']==self.merchant_name].copy()
         data_province=self.data_group(data1,['收货地址省份'])
         data_province_risk=self.data_group(data1,['收货地址省份','风险等级'])
-        print('逾期订单省份分布获取完成')
+        # print('逾期订单省份分布获取完成')
         return data_province,data_province_risk
 
     # 逾期订单城市分布
@@ -219,7 +218,7 @@ class DataClean(object):
         data1=self.data[self.data['商户名称']==self.merchant_name].copy()
         data_city=self.data_group(data1,['收货地址省份','收货地址城市'])
         data_city_risk=self.data_group(data1,['收货地址省份','收货地址城市','风险等级'])
-        print('逾期订单城市分布获取完成')
+        # print('逾期订单城市分布获取完成')
         return data_city,data_city_risk
 
     # 逾期订单区县分布
@@ -227,7 +226,7 @@ class DataClean(object):
         data1=self.data[self.data['商户名称']==self.merchant_name].copy()
         data_county=self.data_group(data1,['收货地址省份','收货地址城市','收货地址区县'])
         data_county_risk=self.data_group(data1,['收货地址省份','收货地址城市','收货地址区县','风险等级'])
-        print('逾期订单区县分布获取完成')
+        # print('逾期订单区县分布获取完成')
         return data_county,data_county_risk
 
     # 逾期订单品牌分布
@@ -235,7 +234,7 @@ class DataClean(object):
         data1=self.data[self.data['商户名称']==self.merchant_name].copy()
         data_brand=self.data_group(data1,['品牌'])
         data_brand_risk=self.data_group(data1,['品牌','风险等级'])
-        print('逾期订单品牌分布获取完成')
+        # print('逾期订单品牌分布获取完成')
         return data_brand,data_brand_risk
 
     # 逾期订单机型分布
@@ -243,7 +242,7 @@ class DataClean(object):
         data1=self.data[self.data['商户名称']==self.merchant_name].copy()
         data_model=self.data_group(data1,['品牌','机型'])
         data_model_risk=self.data_group(data1,['品牌','机型','风险等级'])
-        print('逾期订单机型分布获取完成')
+        # print('逾期订单机型分布获取完成')
         return data_model,data_model_risk
 
     # 逾期订单内存分布
@@ -251,23 +250,9 @@ class DataClean(object):
         data1=self.data[self.data['商户名称']==self.merchant_name].copy()
         data_memory=self.data_group(data1,['品牌','机型','内存'])
         data_memory_risk=self.data_group(data1,['品牌','机型','内存','风险等级'])
-        print('逾期订单内存分布获取完成')
+        # print('逾期订单内存分布获取完成')
         return data_memory,data_memory_risk
 
-
-# # 规则总结类
-# class RuleSummary():
-#     def __init__(self,data,merchant_name):
-#         self.data=data
-#         self.merchant_name=merchant_name
-#
-#     # 逾期订单规则总结
-#     def get_overdue_rule(self):
-#         # 整体数据情况
-
-
-
-# 方法调用方法
 
 # 数据保存方法
 def save_data_1(dic1={},data_name='',merchant_name=''):
@@ -276,7 +261,7 @@ def save_data_1(dic1={},data_name='',merchant_name=''):
     with pd.ExcelWriter(f'../data/{merchant_name}/{data_name}.xlsx') as witer:
         for k, v in dic1.items():
             v.to_excel(witer, sheet_name=k)
-            print(f'{k}保存完成！！！')
+            # print(f'{k}保存完成！！！')
 
 
 def run(merchant_name):
@@ -338,10 +323,12 @@ def run(merchant_name):
     save_data_1(dic1=dic_risk_data,data_name='风险等级分布',merchant_name=merchant_name)
     save_data_1(dic1=dic_goods_data,data_name='商品属性分布',merchant_name=merchant_name)
     save_data_1(dic1=dic_address_data,data_name='地址属性分布',merchant_name=merchant_name)
-    print('数据保存完成！！！')
+    print(f'{merchant_name}数据清洗完成！！！')
 
 
 if __name__ == '__main__':
     run('星海租赁')
+    time.sleep(3)
     run('四川星皓未来科技有限公司')
+    time.sleep(3)
     run('咖租机')

@@ -1,5 +1,6 @@
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
+import datetime
 
 X = [[0, 'a'], [0, 'b'], [1, 'a'], [2, 'b']]
 
@@ -10,3 +11,7 @@ ct = ColumnTransformer(
 
 X = ct.fit_transform(X)
 print(X)
+
+#获取当前时间
+time_now=datetime.datetime.now().strftime('%Y-%m-%d')
+print(time_now)
