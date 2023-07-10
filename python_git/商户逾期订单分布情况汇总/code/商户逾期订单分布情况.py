@@ -327,8 +327,8 @@ def run(merchant_name):
 
 
 if __name__ == '__main__':
-    run('星海租赁')
-    time.sleep(3)
-    run('四川星皓未来科技有限公司')
-    time.sleep(3)
-    run('咖租机')
+    run('筑沃租机')
+    # time.sleep(3)
+    # run('四川星皓未来科技有限公司')
+    # time.sleep(3)
+    # run('咖租机')
